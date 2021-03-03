@@ -5,6 +5,9 @@ clear variables;
 sample_time = 1e-5; % sec
 sim_duration = 0.1; % sec
 %%
+Irradiance = 1000; % W/m^2
+Temperature = 25; % 'C
+%%
 Vout = 6; % V
 Vin = 17.6; % V
 fsw = 1e3; % Hz
@@ -17,4 +20,10 @@ L = Vout * (Vin - Vout) / (delta_IL * fsw * Vin); % H
 Cout = delta_IL / (8 * fsw * delta_Vout); % F
 
 Cin = 1e-6; % F
+
+r_small = 1e-3; % Ohm
+%%
+sim_filename = 'buck_mppt';
+% open_system(sim_filename)
+sim(sim_filename);
 
