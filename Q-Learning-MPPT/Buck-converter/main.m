@@ -1,10 +1,13 @@
 clc;
-close all;
+close all; 
 clear variables;
 %%
 sample_time = 1e-6; % sec
 sim_duration = 0.1; % sec
+delay = 0e-6; % sec
 %%
+% po, q, constant
+mppt_algo_name = "po";
 Irradiance = 1000; % W/m^2
 Temperature = 25; % 'C
 Voc = 21.9;
@@ -28,8 +31,9 @@ Cout = delta_IL / (8 * fsw * delta_Vout); % F
 Cin = 300e-6; % F
 
 r_small = 1e-3; % Ohm
+
 %%
 sim_filename = 'buck_mppt';
-% open_system(sim_filename)
+open_system(sim_filename)
 sim(sim_filename);
 
