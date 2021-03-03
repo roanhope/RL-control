@@ -1,0 +1,12 @@
+# Ignore project file
+*.prj
+**.autosave
+**.slxc
+# Ignore resources folder
+resources/*
+**/slprj
+slprj/*
+
+
+
+*.mexw64
